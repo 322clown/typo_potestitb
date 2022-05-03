@@ -30,3 +30,6 @@ if __name__ == '__main__':
             'Discount': 0.1,
         }
     )
+    print('ХУ-Е-ТА')
+
+    print('МДЫ КРИНЖ')
