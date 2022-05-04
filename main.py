@@ -12,7 +12,7 @@ params = {
 table = 'Categories'
 
 if __name__ == '__main__':
-    # task_5()
+    task_5()
     # task_4(
     #     'Classical',
     #     'Pop',

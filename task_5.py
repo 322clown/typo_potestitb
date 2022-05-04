@@ -11,7 +11,6 @@ url = '{URL}/task_4'.format(URL=URL)
 
 
 def task_5():
-    # SELECT * FROM table//////////////////////////////////////////////////////
     orders_data = get_all_from_table(DB, table='Orders')
     order_details_data = get_all_from_table(DB, table="'Order Details'")
 
@@ -22,10 +21,10 @@ def task_5():
         unit_price = order_detail[2]
         quantity = order_detail[3]
         discount = order_detail[4]
-        # Можно лучше///////////////////////////////////////////////////////////////
-        if order_id not in orders_coast:
-            orders_coast[order_id] = unit_price * quantity * (1 - discount)
-            continue
+        # if order_id not in orders_coast:
+        #     orders_coast[order_id] = unit_price * quantity * (1 - discount)
+        #     continue
+        orders_coast.setdefault(order_id,  0)
         orders_coast[order_id] += unit_price * quantity * (1 - discount)
 
     countries = {}
@@ -35,7 +34,6 @@ def task_5():
         if not datetime.datetime(1997, 7, 3) <= datetime_order <= datetime.datetime(1997, 12, 20):
             continue
 
-        # format constant ////////////////////////////////////////////////////
         date = datetime.datetime.strftime(datetime_order, DATE_FORMAT)
         country = order_data[13]
         city = order_data[10]
@@ -45,12 +43,10 @@ def task_5():
 
         if country not in countries:
             countries[country] = {}
-        #     countries_1 ?????????????????
         countries_1 = countries[country]
-        # Можно лучше////////////////////////////////////////////////////////
-        if city not in countries_1:
-            countries_1[city] = {'delay_percent': 0, 'orders': []}
-        #     ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+        # if city not in countries_1:
+        #     countries_1[city] = {'delay_percent': 0, 'orders': []}
+        countries_1.setdefault(city, {'delay_percent': 0, 'orders': []})
         countries_2 = countries_1[city]
         orders = countries_2['orders']
         orders.append(
@@ -63,11 +59,12 @@ def task_5():
         required_date = order_data[4]
         shipped_date = order_data[5]
         if shipped_date > required_date:
-            if country not in delays:
-                delays[country] = {}
-            if city not in delays[country]:
-                delays[country][city] = 0
-
+            # if country not in delays:
+            #     delays[country] = {}
+            delays.setdefault(country, {})
+            # if city not in delays[country]:
+            #     delays[country][city] = 0
+            delays[country].setdefault(city, 0)
             delays[country][city] += 1
 
     for delay in delays.items():
