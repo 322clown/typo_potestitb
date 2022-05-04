@@ -100,10 +100,3 @@
 #     if response.status_code // 100 != 2:
 #         raise ConnectionError(f'Неудачный запрос, полученный ответ{response.text}')
 #     print(response.text)
-
-
-
-
-# Заебал этот гит ебанный сука
-print('ЗАЕБАЛ ЭТОТ ГИТ ПОШЁЛ ОН НАХУЙ KEKW')
-

@@ -19,17 +19,20 @@ if __name__ == '__main__':
     #     'Jazz'
     # )
     # insert_into_tabla(DB, table, params)
-    insert_into_tabla(
-        'D:\\pythonProject\\new.db',
-        "'Order Details'",
-        params={
-            'OrderID': 2059,
-            'ProductID': 1,
-            'UnitPrice': 12,
-            'Quantity': 31,
-            'Discount': 0.1,
-        }
-    )
-    print('ХУ-Е-ТА')
+    # insert_into_tabla(
+    #     'D:\\pythonProject\\new.db',
+    #     "'Order Details'",
+    #     params={
+    #         'OrderID': 2059,
+    #         'ProductID': 1,
+    #         'UnitPrice': 12,
+    #         'Quantity': 31,
+    #         'Discount': 0.1,
+    #     }
+    # )
+    # a = ['asdf', 'cc', '123', 'rrrrrr']
+    # b = [i for i in a if len(i) > 3]
+    # print(b)
+    # a = input()
 
-    print('МДЫ КРИНЖ')
+    
