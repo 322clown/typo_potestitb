@@ -20,11 +20,11 @@ def task1():
             schet = schet * -1
         bank_nomer_schet.setdefault(bank, {})
         bank_nomer_schet[bank].setdefault(nomer, 0)
+        if bank_nomer_schet[bank][nomer] == 'ЗАБЛОКИРОВАНО':
+            continue
         bank_nomer_schet[bank][nomer] += schet
         if bank_nomer_schet[bank][nomer] < 0:
             bank_nomer_schet[bank][nomer] = 'ЗАБЛОКИРОВАНО'
-
-
     for bank, nomer_schet in bank_nomer_schet.items():
         for nomer, schet in nomer_schet.items():
             print(f'{bank} {nomer} {schet}')
